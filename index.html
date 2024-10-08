@@ -11,7 +11,6 @@
             color: white;
             font-size: 18px;
             padding: 10px 0;
-            white-space: nowrap;
             overflow: hidden;
             position: fixed;
             top: 0;
@@ -21,7 +20,7 @@
 
         .announcement-bar-content {
             display: inline-block;
-            padding-left: 100%;
+            white-space: nowrap;
             animation: scroll-text 20s linear infinite;
         }
 
@@ -36,112 +35,47 @@
 
         /* Styling for the main content */
         body {
-            font-family: 'Arial', sans-serif;
+            padding-top: 50px; /* Adjust for the fixed bar */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            padding-top: 50px; /* To prevent content overlap with the announcement bar */
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
             text-align: center;
-            padding: 20px 0;
         }
 
-        h1 {
-            color: #333;
+        /* Style for the products */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
         }
 
-        /* Products */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .product {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 10px;
+        .product-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 300px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .product-name {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        .product-price {
-            font-size: 1.2em;
-            color: #4CAF50;
-        }
-
-        .buy-now {
-            background-color: #4CAF50;
+        .buy-now-button {
+            background-color: #007bff;
             color: white;
             padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
             text-decoration: none;
-            font-size: 1em;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
         }
 
-        .buy-now:hover {
-            background-color: #45a049;
+        .buy-now-button:hover {
+            background-color: #0056b3;
         }
 
-        /* "Om oss" section */
-        .about-us {
-            margin-top: 50px;
-            padding: 40px;
-            background-color: #f0f0f0;
+        /* Footer styling */
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px;
             text-align: center;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .about-us h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .about-us p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer p {
-            margin: 0;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -150,69 +84,59 @@
     <!-- Announcement bar -->
     <div class="announcement-bar">
         <div class="announcement-bar-content">
-            Handla nu, betala med Swish!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Upptäck våra bästsäljare idag!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Alltid bra priser!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Exklusiva dofter här!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Handla parfym idag!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             Beställ dina samples!
         </div>
     </div>
 
-    <!-- Main content -->
-    <div class="container">
-        <h1>Våra Produkter</h1>
-
-        <!-- Product Section -->
-        <div class="products">
-            <div class="product">
-                <div class="product-name">Afnan 9pm 5ml</div>
-                <div class="product-price">35 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
-
-            <div class="product">
-                <div class="product-name">Aqua di Gio Profondo 5ml</div>
-                <div class="product-price">90 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
-
-            <div class="product">
-                <div class="product-name">John Gustav Amaze 5ml</div>
-                <div class="product-price">35 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
-
-            <div class="product">
-                <div class="product-name">Maahir Legacy 5ml</div>
-                <div class="product-price">40 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
-
-            <div class="product">
-                <div class="product-name">One Bold Chemist 10ml</div>
-                <div class="product-price">90 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
-
-            <div class="product">
-                <div class="product-name">One Bold Chemist 5ml</div>
-                <div class="product-price">50 kr</div>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
-            </div>
+    <!-- Product list -->
+    <div class="product-list">
+        <div class="product-item">
+            <h2>Afnan 9pm 5ml</h2>
+            <p>35 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+        </div>
+        <div class="product-item">
+            <h2>Aqua di Gio Profondo 5ml</h2>
+            <p>90 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+        </div>
+        <div class="product-item">
+            <h2>John Gustav Amaze 5ml</h2>
+            <p>35 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+        </div>
+        <div class="product-item">
+            <h2>Maahir Legacy 5ml</h2>
+            <p>40 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+        </div>
+        <div class="product-item">
+            <h2>One Bold Chemist 10ml</h2>
+            <p>90 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+        </div>
+        <div class="product-item">
+            <h2>One Bold Chemist 5ml</h2>
+            <p>50 kr</p>
+            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
         </div>
     </div>
 
-    <!-- "Om oss" Section -->
+    <!-- "Om oss" section -->
     <div class="about-us">
-        <h2>Om Oss</h2>
-        <p>VF Parfym Samples erbjuder ett utmärkt urval av exklusiva dofter. Vi gör det enkelt och prisvärt att testa lyxiga parfymer innan du köper en fullstor flaska. Beställ idag och upplev dofterna som passar just dig!</p>
+        <h2>Om oss</h2>
+        <p>VF Parfym erbjuder exklusiva parfymprover till överkomliga priser. Vårt mål är att ge alla en chans att prova lyxiga dofter innan de köper hela flaskor.</p>
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 VF Parfym Samples. All Rights Reserved.</p>
-    </div>
+    <footer>
+        © 2024 VF Parfym. Alla rättigheter förbehållna.
+    </footer>
 
 </body>
 </html>
