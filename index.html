@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VF Parfym Samples</title>
     <style>
-        /* Announcement bar with gradient */
+        /* General page styling to prevent horizontal scrolling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Announcement bar with gradient and smooth animations */
         .announcement-bar {
             background: linear-gradient(90deg, #00adff, #00ff6a);
             color: white;
             font-size: 18px;
             padding: 10px 0;
-            overflow: hidden;
-            white-space: nowrap;
+            text-align: center;
             position: fixed;
             top: 0;
-            z-index: 1000;
             width: 100%;
+            z-index: 1000;
+            animation: gradient-move 10s ease infinite;
         }
 
-        /* Rotating text in an infinite loop */
-        .announcement-bar-content {
-            display: inline-block;
-            padding-left: 100%;
-            white-space: nowrap;
-            animation: scroll-text 20s linear infinite;
-        }
-
-        @keyframes scroll-text {
+        @keyframes gradient-move {
             0% {
-                transform: translateX(100%);
+                background-position: 0% 50%;
             }
             100% {
-                transform: translateX(-100%);
+                background-position: 100% 50%;
             }
         }
 
@@ -40,16 +40,46 @@
         header {
             text-align: center;
             padding: 20px;
-            margin-top: 40px; /* Ensures it sits just below the announcement bar */
-            width: 100%;
             background-color: white;
+            width: 100%;
+            position: fixed;
+            top: 40px; /* Adjusts for the height of the announcement bar */
             z-index: 999;
-            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 36px;
             margin: 0;
+            color: #333;
+        }
+
+        /* Image below header */
+        .header-image {
+            margin-top: 100px; /* Adjusts for the height of the fixed header and announcement bar */
+            width: 100%;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Content wrapper to push content below the fixed header and bar */
+        .content-wrapper {
+            padding-top: 40px; /* Ensures content starts below the image */
+        }
+
+        /* Announcement text animations */
+        .announcement-text {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .announcement-text.active {
+            display: block;
+            opacity: 1;
         }
 
         /* Products section */
@@ -71,6 +101,12 @@
             width: 100px;
             height: auto;
             margin-right: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.1);
         }
 
         .product-info {
@@ -85,6 +121,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
 
         .buy-now:hover {
@@ -105,26 +142,15 @@
             margin: 40px 0;
             font-size: 20px;
         }
+
     </style>
 </head>
 <body>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <div class="announcement-bar-content">
-            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Beställ dina samples! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Beställ dina samples!
-        </div>
+        <span class="announcement-text active">Handla nu, betala med Swish!</span>
+        <span class="announcement-text">Upptäck våra bästsäljare idag!</span>
     </div>
 
     <!-- Header -->
@@ -132,61 +158,88 @@
         <h1>VF Parfym Samples</h1>
     </header>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Afnan 9pm 5ml">
-            <div class="product-info">
-                <p>Afnan 9pm 5ml - 35 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Aqua di Gio Profondo 5ml">
-            <div class="product-info">
-                <p>Aqua di Gio Profondo 5ml - 90 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="John Gustav Amaze 5ml">
-            <div class="product-info">
-                <p>John Gustav Amaze 5ml - 35 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Maahir Legacy 5ml">
-            <div class="product-info">
-                <p>Maahir Legacy 5ml - 40 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="One Bold Chemist 10ml">
-            <div class="product-info">
-                <p>One Bold Chemist 10ml - 90 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="One Bold Chemist 5ml">
-            <div class="product-info">
-                <p>One Bold Chemist 5ml - 50 kr</p>
-                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-            </div>
-        </div>
-    </section>
+    <!-- Image below the header -->
+    <div class="header-image">
+        <img src="https://via.placeholder.com/1200x400" alt="Header Image">
+    </div>
 
-    <!-- 'Om oss' Text Section -->
-    <section class="about-us">
-        <p>Om oss: Vi erbjuder exklusiva parfym samples från världens bästa märken till oslagbara priser.</p>
-    </section>
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Products Section -->
+        <section class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="Afnan 9pm 5ml">
+                <div class="product-info">
+                    <p>Afnan 9pm 5ml - 35 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="Aqua di Gio Profondo 5ml">
+                <div class="product-info">
+                    <p>Aqua di Gio Profondo 5ml - 90 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="John Gustav Amaze 5ml">
+                <div class="product-info">
+                    <p>John Gustav Amaze 5ml - 35 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="Maahir Legacy 5ml">
+                <div class="product-info">
+                    <p>Maahir Legacy 5ml - 40 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="One Bold Chemist 10ml">
+                <div class="product-info">
+                    <p>One Bold Chemist 10ml - 90 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100" alt="One Bold Chemist 5ml">
+                <div class="product-info">
+                    <p>One Bold Chemist 5ml - 50 kr</p>
+                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>All Rights Reserved © VF Parfym</p>
-    </footer>
+        <!-- About Us Section -->
+        <div class="about-us">
+            <p>Om oss</p>
+            <p>Välkommen till VF Parfym Samples där vi erbjuder ett brett utbud av exklusiva doftprover till bra priser!</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 VF Parfym Samples. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript to rotate announcement text -->
+    <script>
+        const texts = document.querySelectorAll('.announcement-text');
+        let currentIndex = 0;
+
+        function rotateText() {
+            texts.forEach((text, index) => {
+                text.classList.remove('active');
+                text.style.opacity = 0;
+            });
+            currentIndex = (currentIndex + 1) % texts.length;
+            texts[currentIndex].classList.add('active');
+            texts[currentIndex].style.opacity = 1;
+        }
+
+        setInterval(rotateText, 3000); // Change text every 3 seconds
+    </script>
 
 </body>
 </html>
