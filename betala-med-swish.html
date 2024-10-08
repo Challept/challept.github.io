@@ -1376,32 +1376,12 @@ Item added to your cart
       <p style="font-size: 1.2em; color: #333;">Frakt tillkommer: 25 kr 📦</p>
 
       <!-- Knappen "Lägg till beställning" som ska vara kvar -->
-      orderForm.addEventListener('submit', function(event) {
-  event.preventDefault();
+      <button type="button" id="submit-button" class="swish-button" 
+        style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;" 
+        onclick="window.location.href='https://vfparfym.com/val-sidan.html';">
+        Lägg till beställning
+</button>
 
-  const name = document.getElementById('name').value.trim();
-  const address = document.getElementById('address').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const products = [...checkboxes].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-  const totalprice = sessionStorage.getItem('totalPrice');
-
-  // Kontrollera om någon produkt är vald
-  if (selectedProductCount === 0) {
-    alert("Du måste välja minst en produkt innan du går vidare.");
-    return;
-  }
-
-  // Kontrollera om användaren har fyllt i alla obligatoriska fält
-  if (!name || !address || !phone) {
-    alert("Du måste fylla i alla fält för att kunna lägga till en beställning.");
-    return;
-  }
-
-  // Här kan du hoppa över fetch-anropet om du inte vill skicka datan någonstans, eller behålla det om du vill spara beställningen.
-
-  // Skicka kunden till val-sidan
-  window.location.href = 'https://vfparfym.com/val-sidan.html';
-});
     </form>
   </div>
 </div>
