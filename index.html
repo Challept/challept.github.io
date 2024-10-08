@@ -12,16 +12,19 @@
             font-size: 18px;
             padding: 10px 0;
             overflow: hidden;
+            white-space: nowrap;
             position: fixed;
             top: 0;
-            width: 100%;
             z-index: 1000;
+            width: 100%;
         }
 
+        /* Rotating text in an infinite loop */
         .announcement-bar-content {
             display: inline-block;
+            padding-left: 100%;
             white-space: nowrap;
-            animation: scroll-text 10s linear infinite;
+            animation: scroll-text 20s linear infinite;
         }
 
         @keyframes scroll-text {
@@ -36,13 +39,12 @@
         /* Header fixed below the announcement bar */
         header {
             text-align: center;
-            padding: 60px 20px;
-            margin-top: 50px; /* Ensuring it sits just below the announcement bar */
-            position: fixed;
-            top: 40px; /* Right under the announcement bar */
+            padding: 20px;
+            margin-top: 40px; /* Ensures it sits just below the announcement bar */
             width: 100%;
-            background-color: white; /* Optional: You can adjust the background color */
+            background-color: white;
             z-index: 999;
+            position: relative;
         }
 
         header h1 {
@@ -55,7 +57,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 200px 0; /* Adjust margin to account for the fixed header */
+            margin: 50px 0;
         }
 
         .product {
@@ -110,11 +112,17 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="announcement-bar-content">
-            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Beställ dina samples! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Upptäck våra bästsäljare idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Alltid bra priser! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Exklusiva dofter här! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Handla parfym idag! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Beställ dina samples!
         </div>
     </div>
@@ -122,75 +130,62 @@
     <!-- Header -->
     <header>
         <h1>VF Parfym Samples</h1>
-        <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
     </header>
 
     <!-- Products Section -->
-    <div class="products">
+    <section class="products">
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="Afnan 9pm 5ml">
             <div class="product-info">
-                <h3>Afnan 9pm 5ml</h3>
-                <p>35 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>Afnan 9pm 5ml - 35 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="Aqua di Gio Profondo 5ml">
             <div class="product-info">
-                <h3>Aqua di Gio Profondo 5ml</h3>
-                <p>90 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>Aqua di Gio Profondo 5ml - 90 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="John Gustav Amaze 5ml">
             <div class="product-info">
-                <h3>John Gustav Amaze 5ml</h3>
-                <p>35 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>John Gustav Amaze 5ml - 35 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="Maahir Legacy 5ml">
             <div class="product-info">
-                <h3>Maahir Legacy 5ml</h3>
-                <p>40 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>Maahir Legacy 5ml - 40 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="One Bold Chemist 10ml">
             <div class="product-info">
-                <h3>One Bold Chemist 10ml</h3>
-                <p>90 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>One Bold Chemist 10ml - 90 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="One Bold Chemist 5ml">
             <div class="product-info">
-                <h3>One Bold Chemist 5ml</h3>
-                <p>50 kr</p>
-                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+                <p>One Bold Chemist 5ml - 50 kr</p>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- About Us Section -->
-    <div class="about-us">
-        <h2>Om oss</h2>
-        <p>Här kan du skriva lite information om VF Parfym och vad ni erbjuder!</p>
-    </div>
+    <!-- 'Om oss' Text Section -->
+    <section class="about-us">
+        <p>Om oss: Vi erbjuder exklusiva parfym samples från världens bästa märken till oslagbara priser.</p>
+    </section>
 
     <!-- Footer -->
     <footer>
-        © 2024 VF Parfym Samples. Alla rättigheter förbehållna.
+        <p>All Rights Reserved © VF Parfym</p>
     </footer>
 
 </body>
