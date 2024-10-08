@@ -29,7 +29,6 @@
 
         /* Text animation for announcement */
         .announcement-text {
-            display: block;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -38,14 +37,15 @@
             opacity: 1;
         }
 
-        /* Rotating through the announcement text */
+        /* Rotating through the announcement text one by one */
         @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
+            0% { opacity: 0; }
             10%, 90% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         .announcement-text {
-            animation: fadeInOut 10s linear infinite;
+            animation: fadeInOut 12s linear infinite;
         }
 
         /* Header fixed below the announcement bar */
@@ -120,7 +120,7 @@
         }
 
         .buy-now-button {
-            margin-top: 10px;
+            margin-top: auto;
             padding: 10px 20px;
             background-color: #00adff;
             color: white;
@@ -261,6 +261,5 @@
         <h2>Om oss</h2>
         <p>Vi erbjuder de bästa parfymsamples från exklusiva märken över hela världen. Med snabba leveranser och säkra betalningsmetoder, är vi här för att ge dig den bästa doftupplevelsen.</p>
     </section>
-
 </body>
 </html>
