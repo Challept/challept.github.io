@@ -11,6 +11,7 @@
             overflow-x: hidden;
         }
         
+        /* Annonsbar */
         .announcement-bar {
             background: linear-gradient(90deg, #00aaff, #00ff7f);
             color: white;
@@ -24,40 +25,59 @@
             z-index: 9999;
         }
 
-        .announcement-bar div {
+        .announcement-bar p {
             display: inline-block;
-            animation: fade 3s linear infinite;
+            animation: fadeIn 3s ease-in-out infinite;
         }
 
-        @keyframes fade {
+        @keyframes fadeIn {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
         }
 
-        .header {
+        /* Sticky header */
+        .sticky-header {
             background-color: #f8f8f8;
             padding: 20px;
             text-align: center;
             font-size: 30px;
             font-weight: bold;
-            margin-top: 50px; /* To ensure header is below the announcement bar */
+            position: sticky;
+            top: 50px;
+            z-index: 999;
         }
 
-        .product-container {
+        /* Bild under headern */
+        .image-container {
+            margin-top: 100px; /* För att ge plats för annonsbaren och headern */
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Produkter */
+        .product-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .product-card {
+            flex: 1 1 calc(33.333% - 40px);
             margin: 20px;
-        }
-
-        .product {
-            margin: 10px;
             text-align: center;
+            border: 1px solid #ddd;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .product img {
-            max-width: 100px;
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            max-width: 100%;
             height: auto;
         }
 
@@ -77,22 +97,17 @@
             background-color: #0077cc;
         }
 
-        .about-us {
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            margin: 50px 0;
             padding: 20px;
-            animation: fadeInUp 2s ease-out;
+            position: relative;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        footer p {
+            margin: 0;
         }
 
     </style>
@@ -101,41 +116,70 @@
 
     <!-- Annonsbar -->
     <div class="announcement-bar">
-        <div id="message">Handla nu, betala med Swish!</div>
+        <p id="announcement-text">Handla nu, betala med Swish!</p>
     </div>
 
     <!-- Header -->
-    <div class="header">
-        VF Parfym Samples
-    </div>
+    <header class="sticky-header">
+        <h1>VF Parfym Samples</h1>
+    </header>
 
     <!-- Bild nedanför headern -->
-    <div style="text-align:center; margin: 20px;">
+    <div class="image-container">
         <img src="https://via.placeholder.com/1200x400" alt="Placeholder Image">
     </div>
 
     <!-- Produkter -->
-    <div class="product-container">
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Product">
-            <p>Afnan 9pm 5ml</p>
+    <section class="product-section">
+        <!-- Produkterna sorterade från A till Ö och sedan ml -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Afnan 9pm">
+            <h3>Afnan 9pm</h3>
+            <p>5ml</p>
             <p>35 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-button">Köp nu</a>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
         </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Product">
-            <p>Aqua di Gio Profondo 5ml</p>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Aqua di Gio Profondo">
+            <h3>Aqua di Gio Profondo</h3>
+            <p>5ml</p>
             <p>90 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-button">Köp nu</a>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
         </div>
-        <!-- Lägg till fler produkter på samma sätt -->
-    </div>
-
-    <!-- Om oss sektion -->
-    <section class="about-us">
-        <h2>Om oss</h2>
-        <p>Vi erbjuder de bästa parfymsamples från exklusiva märken över hela världen. Med snabba leveranser och säkra betalningsmetoder, är vi här för att ge dig den bästa doftupplevelsen.</p>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="John Gustav Amaze">
+            <h3>John Gustav Amaze</h3>
+            <p>5ml</p>
+            <p>35 kr</p>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Maahir Legacy">
+            <h3>Maahir Legacy</h3>
+            <p>5ml</p>
+            <p>40 kr</p>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="One Bold Chemist">
+            <h3>One Bold Chemist</h3>
+            <p>5ml</p>
+            <p>50 kr</p>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="One Bold Chemist 10ml">
+            <h3>One Bold Chemist</h3>
+            <p>10ml</p>
+            <p>90 kr</p>
+            <button class="buy-button" onclick="window.location.href='https://vfparfym.com/betala-med-swish'">Köp nu</button>
+        </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 VF Parfym Samples. Alla rättigheter förbehållna.</p>
+    </footer>
 
     <script>
         const messages = [
@@ -151,14 +195,14 @@
         ];
 
         let messageIndex = 0;
-        const messageElement = document.getElementById("message");
+        const messageElement = document.getElementById("announcement-text");
 
         function rotateMessages() {
             messageElement.textContent = messages[messageIndex];
             messageIndex = (messageIndex + 1) % messages.length;
         }
 
-        setInterval(rotateMessages, 3000);
+        setInterval(rotateMessages, 3000);  // Byter text var 3:e sekund
     </script>
 </body>
 </html>
