@@ -82,25 +82,30 @@
             opacity: 1;
         }
 
-        /* Products section - aligned to the left */
+        /* Products section - grid layout for alphabetical order */
         .products {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align products to the left */
-            margin: 50px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 50px;
         }
 
         .product {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin: 20px 0;
-            text-align: left;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .product img {
             width: 100px;
             height: auto;
-            margin-right: 20px;
+            margin-bottom: 10px;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
@@ -109,18 +114,25 @@
             transform: scale(1.1);
         }
 
-        .product-info {
-            display: flex;
-            flex-direction: column;
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
         }
 
         .buy-now {
             background-color: #00adff;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px;
+            font-size: 14px;
             transition: background-color 0.3s ease;
         }
 
@@ -244,55 +256,50 @@
         <section class="products">
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="Afnan 9pm 5ml">
-                <div class="product-info">
-                    <p>Afnan 9pm 5ml - 35 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">Afnan 9pm 5ml</div>
+                <div class="product-price">35 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="Aqua di Gio Profondo 5ml">
-                <div class="product-info">
-                    <p>Aqua di Gio Profondo 5ml - 90 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">Aqua di Gio Profondo 5ml</div>
+                <div class="product-price">90 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="John Gustav Amaze 5ml">
-                <div class="product-info">
-                    <p>John Gustav Amaze 5ml - 35 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">John Gustav Amaze 5ml</div>
+                <div class="product-price">35 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="Maahir Legacy 5ml">
-                <div class="product-info">
-                    <p>Maahir Legacy 5ml - 40 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">Maahir Legacy 5ml</div>
+                <div class="product-price">40 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="One Bold Chemist 10ml">
-                <div class="product-info">
-                    <p>One Bold Chemist 10ml - 90 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">One Bold Chemist 10ml</div>
+                <div class="product-price">90 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/100" alt="One Bold Chemist 5ml">
-                <div class="product-info">
-                    <p>One Bold Chemist 5ml - 50 kr</p>
-                    <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
-                </div>
+                <div class="product-name">One Bold Chemist 5ml</div>
+                <div class="product-price">50 kr</div>
+                <a class="buy-now" href="https://vfparfym.com/betala-med-swish">Köp nu</a>
             </div>
         </section>
 
-        <!-- About Us Section with cool animations -->
-        <div class="about-us">
-            <p>Välkommen till <span class="highlight">VF Parfym Samples</span>, din destination för högkvalitativa parfymprover till fantastiska priser! Vi erbjuder ett brett utbud av exklusiva dofter för alla smaker och tillfällen.</p>
+        <!-- About Us Section -->
+        <section class="about-us">
+            <h2>Om oss</h2>
+            <p>Välkommen till VF Parfym Samples, din destination för exklusiva doftprover till oslagbara priser! Vi erbjuder ett brett utbud av exklusiva dofter för alla smaker och tillfällen.</p>
             <p>Med vårt unika sortiment får du möjligheten att <span class="highlight">prova</span> några av världens mest eftertraktade dofter innan du bestämmer dig för att köpa en hel flaska.</p>
             <p>Vi är stolta över att erbjuda både <span class="highlight">snabba leveranser</span> och enkel betalning med Swish för att ge dig den bästa möjliga shoppingupplevelsen!</p>
             <p>Följ med oss på en doftresa och upptäck din nya favoritparfym idag!</p>
-        </div>
+        </section>
 
         <!-- Footer -->
         <footer>
