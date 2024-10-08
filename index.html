@@ -82,11 +82,11 @@
             opacity: 1;
         }
 
-        /* Products section */
+        /* Products section - aligned to the left */
         .products {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Align products to the left */
             margin: 50px 0;
         }
 
@@ -94,7 +94,7 @@
             display: flex;
             align-items: center;
             margin: 20px 0;
-            text-align: center;
+            text-align: left;
         }
 
         .product img {
@@ -136,11 +136,86 @@
             margin-top: 40px;
         }
 
-        /* 'Om oss' text */
+        /* 'Om oss' text with multiple animations */
         .about-us {
             text-align: center;
             margin: 40px 0;
-            font-size: 20px;
+            font-size: 22px;
+            animation: fadeInUp 2s ease-in-out, colorChange 4s infinite alternate, textGrow 2s ease-in-out 1;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #333;
+            }
+            100% {
+                color: #00adff;
+            }
+        }
+
+        @keyframes textGrow {
+            0% {
+                font-size: 22px;
+            }
+            100% {
+                font-size: 28px;
+            }
+        }
+
+        .about-us p {
+            margin: 0;
+            padding: 10px;
+            animation: slideIn 3s ease-in-out;
+        }
+
+        .about-us .highlight {
+            font-weight: bold;
+            color: #00adff;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Ensures no horizontal scroll */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
     </style>
@@ -211,10 +286,12 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
+        <!-- About Us Section with cool animations -->
         <div class="about-us">
-            <p>Om oss</p>
-            <p>Välkommen till VF Parfym Samples där vi erbjuder ett brett utbud av exklusiva doftprover till bra priser!</p>
+            <p>Välkommen till <span class="highlight">VF Parfym Samples</span>, din destination för högkvalitativa parfymprover till fantastiska priser! Vi erbjuder ett brett utbud av exklusiva dofter för alla smaker och tillfällen.</p>
+            <p>Med vårt unika sortiment får du möjligheten att <span class="highlight">prova</span> några av världens mest eftertraktade dofter innan du bestämmer dig för att köpa en hel flaska.</p>
+            <p>Vi är stolta över att erbjuda både <span class="highlight">snabba leveranser</span> och enkel betalning med Swish för att ge dig den bästa möjliga shoppingupplevelsen!</p>
+            <p>Följ med oss på en doftresa och upptäck din nya favoritparfym idag!</p>
         </div>
 
         <!-- Footer -->
