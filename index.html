@@ -21,7 +21,7 @@
         .announcement-bar-content {
             display: inline-block;
             white-space: nowrap;
-            animation: scroll-text 15s linear infinite;
+            animation: scroll-text 10s linear infinite;
         }
 
         @keyframes scroll-text {
@@ -33,15 +33,21 @@
             }
         }
 
-        /* Header */
+        /* Header fixed below the announcement bar */
         header {
             text-align: center;
             padding: 60px 20px;
-            margin-top: 60px; /* Space for announcement bar */
+            margin-top: 50px; /* Ensuring it sits just below the announcement bar */
+            position: fixed;
+            top: 40px; /* Right under the announcement bar */
+            width: 100%;
+            background-color: white; /* Optional: You can adjust the background color */
+            z-index: 999;
         }
 
         header h1 {
             font-size: 36px;
+            margin: 0;
         }
 
         /* Products section */
@@ -49,7 +55,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 50px 0;
+            margin: 200px 0; /* Adjust margin to account for the fixed header */
         }
 
         .product {
