@@ -21,7 +21,7 @@
         .announcement-bar-content {
             display: inline-block;
             white-space: nowrap;
-            animation: scroll-text 20s linear infinite;
+            animation: scroll-text 15s linear infinite;
         }
 
         @keyframes scroll-text {
@@ -33,55 +33,82 @@
             }
         }
 
-        /* Styling for the main content */
-        body {
-            padding-top: 50px; /* Adjust for the fixed bar */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        /* Header */
+        header {
             text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px; /* Space for announcement bar */
         }
 
-        /* Style for the products */
-        .product-list {
+        header h1 {
+            font-size: 36px;
+        }
+
+        /* Image in header */
+        .header-image {
+            width: 150px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        /* Products section */
+        .products {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px 0;
+            margin: 50px 0;
         }
 
-        .product-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            width: 300px;
+        .product {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
             text-align: center;
         }
 
-        .buy-now-button {
-            background-color: #007bff;
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .buy-now {
+            background-color: #00adff;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px;
         }
 
-        .buy-now-button:hover {
-            background-color: #0056b3;
+        .buy-now:hover {
+            background-color: #008fcc;
         }
 
-        /* Footer styling */
+        /* Footer */
         footer {
-            background-color: #f1f1f1;
-            padding: 10px;
             text-align: center;
-            font-size: 14px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 40px;
+        }
+
+        /* 'Om oss' text */
+        .about-us {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Announcement bar -->
+    <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="announcement-bar-content">
             Handla nu, betala med Swish! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -93,49 +120,79 @@
         </div>
     </div>
 
-    <!-- Product list -->
-    <div class="product-list">
-        <div class="product-item">
-            <h2>Afnan 9pm 5ml</h2>
-            <p>35 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+    <!-- Header -->
+    <header>
+        <h1>VF Parfym Samples</h1>
+        <img class="header-image" src="https://via.placeholder.com/150" alt="Header Bild">
+        <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+    </header>
+
+    <!-- Products Section -->
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Afnan 9pm 5ml">
+            <div class="product-info">
+                <h3>Afnan 9pm 5ml</h3>
+                <p>35 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
-        <div class="product-item">
-            <h2>Aqua di Gio Profondo 5ml</h2>
-            <p>90 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Aqua di Gio Profondo 5ml">
+            <div class="product-info">
+                <h3>Aqua di Gio Profondo 5ml</h3>
+                <p>90 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
-        <div class="product-item">
-            <h2>John Gustav Amaze 5ml</h2>
-            <p>35 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="John Gustav Amaze 5ml">
+            <div class="product-info">
+                <h3>John Gustav Amaze 5ml</h3>
+                <p>35 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
-        <div class="product-item">
-            <h2>Maahir Legacy 5ml</h2>
-            <p>40 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Maahir Legacy 5ml">
+            <div class="product-info">
+                <h3>Maahir Legacy 5ml</h3>
+                <p>40 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
-        <div class="product-item">
-            <h2>One Bold Chemist 10ml</h2>
-            <p>90 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="One Bold Chemist 10ml">
+            <div class="product-info">
+                <h3>One Bold Chemist 10ml</h3>
+                <p>90 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
-        <div class="product-item">
-            <h2>One Bold Chemist 5ml</h2>
-            <p>50 kr</p>
-            <a href="https://vfparfym.com/betala-med-swish" class="buy-now-button">Köp nu</a>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="One Bold Chemist 5ml">
+            <div class="product-info">
+                <h3>One Bold Chemist 5ml</h3>
+                <p>50 kr</p>
+                <a href="https://vfparfym.com/betala-med-swish" class="buy-now">Köp nu</a>
+            </div>
         </div>
     </div>
 
-    <!-- "Om oss" section -->
+    <!-- About Us Section -->
     <div class="about-us">
         <h2>Om oss</h2>
-        <p>VF Parfym erbjuder exklusiva parfymprover till överkomliga priser. Vårt mål är att ge alla en chans att prova lyxiga dofter innan de köper hela flaskor.</p>
+        <p>Här kan du skriva lite information om VF Parfym och vad ni erbjuder!</p>
     </div>
 
     <!-- Footer -->
     <footer>
-        © 2024 VF Parfym. Alla rättigheter förbehållna.
+        © 2024 VF Parfym Samples. Alla rättigheter förbehållna.
     </footer>
 
 </body>
