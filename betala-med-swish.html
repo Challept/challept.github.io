@@ -1309,9 +1309,72 @@ Item added to your cart
     <!-- Produkt val med pris -->
     <label for="product" style="font-family: 'Poppins', sans-serif; font-size: 1.3em; color: #333;">Välj Produkter (upp till 4):</label>
     <div id="product-selection" style="text-align: left;">
-        <!-- Din existerande produkt-lista -->
-        <!-- ... -->
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-1" name="product" value="Afnan 9pm 5ml" data-price="35" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-1" style="font-size: 1.3em; cursor: pointer;">Afnan 9pm 5ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">35 kr</span>
+          </div>
+        </div>
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-2" name="product" value="Aqua di Gio Profondo 5ml" data-price="90" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-2" style="font-size: 1.3em; cursor: pointer;">Aqua di Gio Profondo 5ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">90 kr</span>
+          </div>
+        </div>
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-3" name="product" value="John Gustav Amaze 5ml" data-price="35" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-3" style="font-size: 1.3em; cursor: pointer;">John Gustav Amaze 5ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">35 kr</span>
+          </div>
+        </div>
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-4" name="product" value="Maahir Legacy 5ml" data-price="40" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-4" style="font-size: 1.3em; cursor: pointer;">Maahir Legacy 5ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">40 kr</span>
+          </div>
+        </div>
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-5" name="product" value="One Bold Chemist 10ml" data-price="90" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-5" style="font-size: 1.3em; cursor: pointer;">One Bold Chemist 10ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">90 kr</span>
+          </div>
+        </div>
+        
+        <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <div>
+            <input type="checkbox" id="product-6" name="product" value="One Bold Chemist 5ml" data-price="50" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
+            <label for="product-6" style="font-size: 1.3em; cursor: pointer;">One Bold Chemist 5ml</label><br>
+          </div>
+          <div>
+            <span style="font-size: 1.2em;">50 kr</span>
+          </div>
+        </div>
+        
     </div>
+
+    <!-- Dynamisk totalvisning längst ned -->
+    <div id="total-price" style="font-size: 1.8em; font-weight: bold; color: #4CAF50; margin-top: 20px;">Total: 0 kr</div>
+    <p style="font-size: 1.2em; color: #333;">Frakt tillkommer: 25 kr 📦</p>
 
     <!-- Knappen "Lägg till beställning" som ska vara kvar -->
     <button type="submit" id="submit-button" class="swish-button" 
@@ -1375,7 +1438,6 @@ Item added to your cart
         });
     });
 </script>
-
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
