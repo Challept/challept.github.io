@@ -1377,11 +1377,29 @@ Item added to your cart
     <p style="font-size: 1.2em; color: #333;">Frakt tillkommer: 25 kr 📦</p>
 
     <!-- Knappen "Lägg till beställning" som ska vara kvar -->
- <button type="button" id="submit-button" class="swish-button" 
-    style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;"
-    onclick="window.location.href='https://vfparfym.com/val-sidan.html'">
+ <<button type="button" id="submit-button" class="swish-button" 
+    style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;">
     Lägg till beställning
 </button>
+
+<script>
+    document.getElementById("submit-button").addEventListener("click", function() {
+        // Hämta fälten
+        const namn = document.getElementById('name').value;
+        const adress = document.getElementById('address').value;
+        const telefon = document.getElementById('phone').value;
+        
+        // Hämta valda produkter
+        const selectedProducts = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        // Kontrollera att alla fält är ifyllda och att minst en produkt är vald
+        if (namn && adress && telefon && selectedProducts.length > 0) {
+            window.location.href = 'https://vfparfym.com/val-sidan.html';
+        } else {
+            alert("Vänligen fyll i alla fält och välj minst en produkt.");
+        }
+    });
+</script>
 
     <!-- Statusmeddelande -->
     <p id="statusMessage" style="font-size: 1.3em; font-weight: bold; color: red;"></p>
