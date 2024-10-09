@@ -21,11 +21,10 @@
             padding: 15px 0;
             font-size: 18px;
             font-weight: bold;
-            position: fixed;
+            position: relative; /* Annonsbaren är inte fast när man scrollar */
             top: 0;
             width: 100%;
             z-index: 9999;
-            animation: slideIn 1s ease-in-out forwards;
         }
 
         .announcement-bar p {
@@ -39,22 +38,16 @@
             50% { opacity: 1; }
         }
 
-        /* Animation för att få annonsbaren att glida in från toppen */
-        @keyframes slideIn {
-            from { top: -100px; }
-            to { top: 0; }
-        }
-
         /* Promo-bar för specialerbjudandet */
         .promo-bar {
-            background-color: #ffcc00; /* Ljusgul färg */
+            background-color: #87CEEB; /* Ljusblå färg */
             color: black;
             text-align: center;
             padding: 10px 0;
             font-size: 16px;
             font-weight: bold;
-            position: fixed;
-            top: 50px;
+            position: sticky; /* Promo-bar följer med vid scroll */
+            top: 0;
             width: 100%;
             z-index: 9998;
             animation: fadeInOutPromo 3s ease-in-out infinite;
@@ -71,7 +64,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 120px;
+            padding-top: 100px;
             width: 100%;
             height: auto;
             text-align: center;
@@ -92,27 +85,27 @@
         }
 
         .product-card {
-            flex: 1 1 calc(23% - 20px); /* Justerat så att 4 produkter får plats på en rad */
+            flex: 1 1 calc(25% - 20px); /* Justerat så att 4 produkter får plats på en rad */
             margin: 10px;
             text-align: center;
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 300px;
+            height: 320px;
+        }
+
+        .product-card img {
+            margin: 0 auto;
+            max-width: 120px; /* Bilder är centrerade i mitten */
+            height: auto;
         }
 
         .product-card:hover {
             transform: scale(1.05);
-        }
-
-        .product-card img {
-            max-width: 120px; /* Större bilder */
-            height: auto;
-            margin-bottom: 10px;
         }
 
         .product-card h3, .product-card p {
@@ -162,7 +155,7 @@
         <p>Köp före 31 december och få chansen att vinna en gratis flaska!</p>
     </div>
 
-    <!-- Bild nedanför baren -->
+    <!-- Bild nedanför barerna -->
     <div class="image-container">
         <img src="VF_Parfym_Samples.png" alt="VF Parfym Samples">
     </div>
