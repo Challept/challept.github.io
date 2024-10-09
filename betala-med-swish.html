@@ -1376,85 +1376,61 @@ Item added to your cart
     <div id="total-price" style="font-size: 1.8em; font-weight: bold; color: #4CAF50; margin-top: 20px;">Total: 0 kr</div>
     <p style="font-size: 1.2em; color: #333;">Frakt tillkommer: 25 kr 📦</p>
 
-    <!-- Knappen "Lägg till beställning" som ska vara kvar -->
- <<button type="button" id="submit-button" class="swish-button" 
-    style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;">
-    Lägg till beställning
-</button>
-
-<script>
-    document.getElementById("submit-button").addEventListener("click", function() {
-        // Hämta fälten
-        const namn = document.getElementById('name').value;
-        const adress = document.getElementById('address').value;
-        const telefon = document.getElementById('phone').value;
-        
-        // Hämta valda produkter
-        const selectedProducts = document.querySelectorAll('input[type="checkbox"]:checked');
-
-        // Kontrollera att alla fält är ifyllda och att minst en produkt är vald
-        if (namn && adress && telefon && selectedProducts.length > 0) {
-            window.location.href = 'https://vfparfym.com/val-sidan.html';
-        } else {
-            alert("Vänligen fyll i alla fält och välj minst en produkt.");
-        }
-    });
-</script>
+    <!-- Knappen "Lägg till beställning" -->
+    <button type="button" id="submit-button" class="swish-button" 
+        style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;">
+        Lägg till beställning
+    </button>
 
     <!-- Statusmeddelande -->
     <p id="statusMessage" style="font-size: 1.3em; font-weight: bold; color: red;"></p>
 </form>
 
-<!-- JavaScript-kod för att hantera Telegram-skickning -->
+<!-- JavaScript för att hantera omdirigering och Telegram-skickning -->
 <script>
-    document.getElementById("order-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-
+    document.getElementById("submit-button").addEventListener("click", function() {
         // Hämta data från formuläret
         const namn = document.getElementById('name').value;
         const adress = document.getElementById('address').value;
         const telefon = document.getElementById('phone').value;
+        const selectedProducts = document.querySelectorAll('input[type="checkbox"]:checked');
 
-        // Hämta valda produkter
-        let selectedProducts = [];
-        document.querySelectorAll('input[type="checkbox"]:checked').forEach(function(checkbox) {
-            selectedProducts.push(checkbox.value);
-        });
+        // Kontrollera att alla fält är ifyllda och att minst en produkt är vald
+        if (namn && adress && telefon && selectedProducts.length > 0) {
+            // Skapa meddelandet att skicka till Telegram
+            const productsArray = [];
+            selectedProducts.forEach(function(checkbox) {
+                productsArray.push(checkbox.value);
+            });
+            const message = `Ny beställning:\n\nNamn: ${namn}\nAdress: ${adress}\nTelefon: ${telefon}\nProdukter:\n- ${productsArray.join('\n- ')}`;
 
-        // Skapa meddelandet att skicka till Telegram
-        const message = `Ny beställning:\n\n`
-                      + `Namn: ${namn}\n`
-                      + `Adress: ${adress}\n`
-                      + `Telefon: ${telefon}\n`
-                      + `Produkter: \n- ${selectedProducts.join('\n- ')}`;
-
-        // Skicka datan till Telegram
-        fetch(`https://api.telegram.org/bot7506748996:AAFae-xIJDslEfN_V6N5tNYQmecZklT1vXo/sendMessage`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                chat_id: '-1002150662868',  // Uppdaterat med gruppens ID
-                text: message
+            // Skicka datan till Telegram
+            fetch(`https://api.telegram.org/bot7506748996:AAFae-xIJDslEfN_V6N5tNYQmecZklT1vXo/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: '-1002150662868', // Din grupps chat-ID
+                    text: message
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.ok) {
-                // Visa framgångsmeddelande
-                document.getElementById("statusMessage").innerText = "Meddelande skickat till Telegram!";
-                document.getElementById("statusMessage").style.color = "green";
-            } else {
-                // Visa felmeddelande
-                document.getElementById("statusMessage").innerText = "Kunde inte skicka meddelandet till Telegram.";
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Visa felmeddelande
-            document.getElementById("statusMessage").innerText = "Ett tekniskt fel uppstod. Försök igen.";
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Omdirigera till nästa sida om allt går bra
+                    window.location.href = 'https://vfparfym.com/val-sidan.html';
+                } else {
+                    alert("Kunde inte skicka meddelandet till Telegram. Försök igen.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Ett tekniskt fel uppstod. Försök igen.");
+            });
+        } else {
+            alert("Vänligen fyll i alla fält och välj minst en produkt.");
+        }
     });
 </script>
 
