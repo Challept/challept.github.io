@@ -29,13 +29,13 @@
 
         .announcement-bar p {
             display: inline-block;
-            animation: fadeInOut 3s ease-in-out infinite;
+            animation: fadeInOut 5s ease-in-out infinite;
         }
 
-        /* Animation för att fadea texten in och ut */
+        /* Animation för fade in och ut för annonsbar */
         @keyframes fadeInOut {
             0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+            20%, 80% { opacity: 1; }
         }
 
         /* Promo-bar för specialerbjudandet */
@@ -50,13 +50,17 @@
             top: 0;
             width: 100%;
             z-index: 9998;
-            animation: fadeInOutPromo 3s ease-in-out infinite;
         }
 
-        /* Animation för fade på promo-bar */
-        @keyframes fadeInOutPromo {
+        /* Text fade för promo-bar */
+        .promo-bar p {
+            display: inline-block;
+            animation: promoFadeInOut 5s ease-in-out infinite;
+        }
+
+        @keyframes promoFadeInOut {
             0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+            20%, 80% { opacity: 1; }
         }
 
         /* Bild under annonsbaren och promobaren */
@@ -233,7 +237,7 @@
             messageIndex = (messageIndex + 1) % messages.length;
         }
 
-        setInterval(rotateMessages, 3000);  // Byter text var 3:e sekund
+        setInterval(rotateMessages, 5000);  // Byter text var 5:e sekund
     </script>
 </body>
 </html>
