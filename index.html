@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VF Parfym Samples</title>
+
+    <!-- Lägg till favicon här -->
+    <link rel="icon" type="image/png" href="VF__1_-removebg-preview.png">
+
     <style>
         body, html {
             margin: 0;
@@ -32,13 +36,12 @@
             animation: fadeInOut 5s ease-in-out infinite;
         }
 
-        /* Animation för fade in och ut för annonsbar */
         @keyframes fadeInOut {
             0%, 100% { opacity: 0; }
             20%, 80% { opacity: 1; }
         }
 
-        /* Promo-bar för specialerbjudandet */
+        /* Promo-bar */
         .promo-bar {
             background-color: #87CEEB;
             color: black;
@@ -52,7 +55,6 @@
             z-index: 9998;
         }
 
-        /* Text fade för promo-bar */
         .promo-bar p {
             display: inline-block;
             animation: promoFadeInOut 5s ease-in-out infinite;
@@ -65,20 +67,20 @@
 
         /* Bild under annonsbaren och promobaren */
         .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    margin-top: 0; /* Tar bort extra avstånd mellan promo-baren och bilden */
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            margin-top: 0;
+        }
 
-.image-container img {
-    width: 100%;
-    max-height: 600px;
-    object-fit: contain;
-}
+        .image-container img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: contain;
+        }
 
         /* Produkter */
         .product-section {
@@ -89,7 +91,7 @@
         }
 
         .product-card {
-            flex: 1 1 calc(25% - 20px); /* Justerat så att 4 produkter får plats på en rad */
+            flex: 1 1 calc(25% - 20px);
             margin: 10px;
             text-align: center;
             border: 1px solid #ddd;
@@ -104,7 +106,7 @@
 
         .product-card img {
             margin: 0 auto;
-            max-width: 120px; /* Bilder är centrerade i mitten */
+            max-width: 120px;
             height: auto;
         }
 
@@ -156,30 +158,18 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes slideInFromLeft {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
 
         @keyframes slideInFromRight {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
 
         /* Footer */
@@ -194,7 +184,6 @@
         footer p {
             margin: 0;
         }
-
     </style>
 </head>
 <body>
@@ -216,7 +205,6 @@
 
     <!-- Produkter -->
     <section class="product-section">
-        <!-- Produkterna sorterade från A till Ö och sedan ml -->
         <div class="product-card">
             <img src="https://vfparfym.com/03_9PM.webp" alt="Afnan 9pm">
             <h3>Afnan 9pm</h3>
@@ -294,7 +282,7 @@
             messageIndex = (messageIndex + 1) % messages.length;
         }
 
-        setInterval(rotateMessages, 5000);  // Byter text var 5:e sekund
+        setInterval(rotateMessages, 5000);
     </script>
 </body>
 </html>
