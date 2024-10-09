@@ -15,7 +15,7 @@
 
         /* Annonsbar */
         .announcement-bar {
-            background-color: #b3e0ff; /* Ljusblå färg */
+            background: linear-gradient(90deg, #00aaff, #00ff7f);
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -30,7 +30,7 @@
 
         .announcement-bar p {
             display: inline-block;
-            animation: fadeInOut 6s ease-in-out infinite;
+            animation: fadeInOut 3s ease-in-out infinite;
         }
 
         /* Animation för att fadea texten in och ut */
@@ -45,9 +45,9 @@
             to { top: 0; }
         }
 
-        /* Promo-bar */
+        /* Promo-bar för specialerbjudandet */
         .promo-bar {
-            background-color: #ffcc00;
+            background-color: #ffcc00; /* Ljusgul färg */
             color: black;
             text-align: center;
             padding: 10px 0;
@@ -57,7 +57,13 @@
             top: 50px;
             width: 100%;
             z-index: 9998;
-            display: none;
+            animation: fadeInOutPromo 3s ease-in-out infinite;
+        }
+
+        /* Animation för fade på promo-bar */
+        @keyframes fadeInOutPromo {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
 
         /* Bild under annonsbaren och promobaren */
@@ -86,7 +92,7 @@
         }
 
         .product-card {
-            flex: 1 1 calc(20% - 20px); /* Justerat så att fler produkter får plats */
+            flex: 1 1 calc(23% - 20px); /* Justerat så att 4 produkter får plats på en rad */
             margin: 10px;
             text-align: center;
             border: 1px solid #ddd;
@@ -96,7 +102,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 300px; /* Mindre kort */
+            height: 300px;
         }
 
         .product-card:hover {
@@ -104,7 +110,7 @@
         }
 
         .product-card img {
-            max-width: 100px; /* Samma storlek på bilderna */
+            max-width: 120px; /* Större bilder */
             height: auto;
             margin-bottom: 10px;
         }
@@ -153,7 +159,7 @@
 
     <!-- Promo-bar -->
     <div class="promo-bar" id="promo-bar">
-        <p>Få chansen att vinna en gratis flaska med ditt köp!</p>
+        <p>Köp före 31 december och få chansen att vinna en gratis flaska!</p>
     </div>
 
     <!-- Bild nedanför baren -->
