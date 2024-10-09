@@ -46,14 +46,21 @@
             position: sticky;
             top: 50px;
             z-index: 999;
-            margin: 0; /* Ingen marginal */
         }
 
         /* Bild under headern */
         .image-container {
             text-align: center;
             padding: 0;
-            margin: 0; /* No space between header and image */
+            margin-top: 0; /* No space between header and image */
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Produkter */
