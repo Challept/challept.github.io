@@ -21,7 +21,7 @@
             padding: 15px 0;
             font-size: 18px;
             font-weight: bold;
-            position: relative; /* Annonsbaren är inte fast när man scrollar */
+            position: relative;
             top: 0;
             width: 100%;
             z-index: 9999;
@@ -40,13 +40,13 @@
 
         /* Promo-bar för specialerbjudandet */
         .promo-bar {
-            background-color: #87CEEB; /* Ljusblå färg */
+            background-color: #87CEEB;
             color: black;
             text-align: center;
             padding: 10px 0;
             font-size: 16px;
             font-weight: bold;
-            position: sticky; /* Promo-bar följer med vid scroll */
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 9998;
@@ -132,6 +132,56 @@
             background-color: #0077cc;
         }
 
+        /* Om oss sektion */
+        .about-us {
+            background-color: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+            margin-top: 50px;
+        }
+
+        .about-us h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .about-us p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: slideInFromRight 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
         /* Footer */
         footer {
             background-color: #333;
@@ -211,6 +261,13 @@
         </div>
     </section>
 
+    <!-- Om oss sektion -->
+    <section class="about-us">
+        <h2>Välkommen till VF Parfym</h2>
+        <p>VF Parfym är ett nytt och lovande parfymföretag som erbjuder exklusiva parfym samples från några av världens mest kända märken. Vi fokuserar på att göra det enkelt för dig att upptäcka nya dofter utan att behöva köpa en hel flaska. Just nu erbjuder vi samples från 5 noggrant utvalda märken, och vi utökar ständigt vårt sortiment!</p>
+        <p>Hos oss på VF Parfym handlar allt om att ge dig en lyxig upplevelse i ett praktiskt format. Oavsett om du vill prova en ny trendig doft eller återvända till en klassisk favorit, hjälper vi dig att hitta rätt. Vi är stolta över att vara ett företag som prioriterar kvalitet, kundnöjdhet och variation.</p>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>© 2024 VF Parfym Samples. Alla rättigheter förbehållna.</p>
@@ -239,6 +296,5 @@
 
         setInterval(rotateMessages, 5000);  // Byter text var 5:e sekund
     </script>
-
 </body>
 </html>
