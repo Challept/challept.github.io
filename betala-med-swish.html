@@ -1296,171 +1296,104 @@ Item added to your cart
 <form id="order-form" style="display: flex; flex-direction: column; gap: 20px;">
     <!-- Namn fält -->
     <label for="name" style="font-family: 'Poppins', sans-serif; font-size: 1.3em; color: #333;">Ditt Namn:</label>
-    <input type="text" id="name" name="name" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc; transition: all 0.3s ease;">
-    
+    <input type="text" id="name" name="name" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc;">
+
     <!-- Adress fält -->
     <label for="address" style="font-family: 'Poppins', sans-serif; font-size: 1.3em; color: #333;">Din Adress:</label>
-    <input type="text" id="address" name="address" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc; transition: all 0.3s ease;">
+    <input type="text" id="address" name="address" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc;">
 
     <!-- Telefonnummer fält -->
     <label for="phone" style="font-family: 'Poppins', sans-serif; font-size: 1.3em; color: #333;">Ditt Telefonnummer:</label>
-    <input type="text" id="phone" name="phone" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc; transition: all 0.3s ease;">
+    <input type="text" id="phone" name="phone" required style="padding: 15px; font-size: 1.2em; border-radius: 12px; border: 2px solid #ccc;">
 
     <!-- Produkt val med pris -->
     <label for="product" style="font-family: 'Poppins', sans-serif; font-size: 1.3em; color: #333;">Välj Produkter (upp till 4):</label>
-<div id="product-selection" style="text-align: left;">
-
-    <!-- Afnan 9pm 5ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-1" name="product" value="Afnan 9pm 5ml" data-price="35" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-1" style="font-size: 1.3em; cursor: pointer;">Afnan 9pm 5ml</label><br>
+    <div id="product-selection" style="text-align: left;">
+        <div class="product-item">
+            <input type="checkbox" id="product-1" name="product" value="Afnan 9pm 5ml" data-price="35">
+            <label for="product-1">Afnan 9pm 5ml (35 kr)</label>
         </div>
-        <div>
-            <span style="font-size: 1.2em;">35 kr</span>
+        <div class="product-item">
+            <input type="checkbox" id="product-2" name="product" value="Aqua di Gio Profondo 5ml" data-price="90">
+            <label for="product-2">Aqua di Gio Profondo 5ml (90 kr)</label>
+        </div>
+        <div class="product-item">
+            <input type="checkbox" id="product-3" name="product" value="John Gustav Amaze 5ml" data-price="35">
+            <label for="product-3">John Gustav Amaze 5ml (35 kr)</label>
+        </div>
+        <div class="product-item">
+            <input type="checkbox" id="product-4" name="product" value="Maahir Legacy 5ml" data-price="40">
+            <label for="product-4">Maahir Legacy 5ml (40 kr)</label>
+        </div>
+        <div class="product-item">
+            <input type="checkbox" id="product-5" name="product" value="One Bold Chemist 10ml" data-price="90">
+            <label for="product-5">One Bold Chemist 10ml (90 kr)</label>
+        </div>
+        <div class="product-item">
+            <input type="checkbox" id="product-6" name="product" value="One Bold Chemist 5ml" data-price="50">
+            <label for="product-6">One Bold Chemist 5ml (50 kr)</label>
+        </div>
+
+        <!-- Dropdown for One Bold Chemist options -->
+        <div id="one-bold-chemist-variants" style="display: none;">
+            <label for="one-bold-chemist">Välj vilken One Bold Chemist du vill ha:</label>
+            <select id="one-bold-chemist" name="one-bold-chemist">
+                <option value="God of Fire">God of Fire</option>
+                <option value="LV Imagination">LV Imagination</option>
+                <option value="Pegasus">Pegasus - Parfums de Marly</option>
+            </select>
         </div>
     </div>
 
-    <!-- Aqua di Gio Profondo 5ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-2" name="product" value="Aqua di Gio Profondo 5ml" data-price="90" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-2" style="font-size: 1.3em; cursor: pointer;">Aqua di Gio Profondo 5ml</label><br>
-        </div>
-        <div>
-            <span style="font-size: 1.2em;">90 kr</span>
-        </div>
-    </div>
-
-    <!-- John Gustav Amaze 5ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-3" name="product" value="John Gustav Amaze 5ml" data-price="35" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-3" style="font-size: 1.3em; cursor: pointer;">John Gustav Amaze 5ml</label><br>
-        </div>
-        <div>
-            <span style="font-size: 1.2em;">35 kr</span>
-        </div>
-    </div>
-
-    <!-- Maahir Legacy 5ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-4" name="product" value="Maahir Legacy 5ml" data-price="40" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-4" style="font-size: 1.3em; cursor: pointer;">Maahir Legacy 5ml</label><br>
-        </div>
-        <div>
-            <span style="font-size: 1.2em;">40 kr</span>
-        </div>
-    </div>
-
-    <!-- One Bold Chemist 10ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-5" name="product" value="One Bold Chemist 10ml" data-price="90" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-5" style="font-size: 1.3em; cursor: pointer;">One Bold Chemist 10ml</label><br>
-        </div>
-        <div>
-            <span style="font-size: 1.2em;">90 kr</span>
-        </div>
-    </div>
-
-    <!-- One Bold Chemist 5ml -->
-    <div class="product-item" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-        <div>
-            <input type="checkbox" id="product-6" name="product" value="One Bold Chemist 5ml" data-price="50" class="product-checkbox" style="width: 35px; height: 35px; transition: transform 0.3s ease;">
-            <label for="product-6" style="font-size: 1.3em; cursor: pointer;">One Bold Chemist 5ml</label><br>
-        </div>
-        <div>
-            <span style="font-size: 1.2em;">50 kr</span>
-        </div>
-    </div>
-
-    <!-- Dropdown för One Bold Chemist varianter, som visas först när den produkten är vald -->
-    <div id="one-bold-chemist-variants" style="display: none; margin-bottom: 20px;">
-        <label for="one-bold-chemist" style="font-size: 1.3em; color: #333;">Välj vilken One Bold Chemist du vill ha:</label>
-        <select id="one-bold-chemist" name="one-bold-chemist" style="width: 100%; padding: 10px; font-size: 1.2em;">
-            <option value="God of Fire">God of Fire</option>
-            <option value="LV Imagination">LV Imagination</option>
-            <option value="Pegasus">Pegasus - Parfums de Marly</option>
-        </select>
-    </div>
-</div>
-
-<!-- JavaScript för att hantera visningen av variantvalet -->
-<script>
-    document.querySelectorAll('.product-checkbox').forEach(function(checkbox) {
-        checkbox.addEventListener('change', function() {
-            const oneBoldSelected = document.querySelector('input[value="One Bold Chemist 5ml"]:checked') !== null || document.querySelector('input[value="One Bold Chemist 10ml"]:checked') !== null;
-            const variantDiv = document.getElementById('one-bold-chemist-variants');
-            if (oneBoldSelected) {
-                variantDiv.style.display = 'block';
-            } else {
-                variantDiv.style.display = 'none';
-            }
-        });
-    });
-</script>
-  
-
-    <!-- Dynamisk totalvisning längst ned -->
+    <!-- Totalpris -->
     <div id="total-price" style="font-size: 1.8em; font-weight: bold; color: #4CAF50; margin-top: 20px;">Total: 0 kr</div>
-    <p style="font-size: 1.2em; color: #333;">Frakt tillkommer: 25 kr 📦</p>
+    <p style="font-size: 1.2em;">Frakt: 25 kr 📦</p>
 
-    <!-- Knappen "Lägg till beställning" -->
-    <button type="button" id="submit-button" class="swish-button" 
-        style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px; cursor: pointer; border: none; transition: background-color 0.4s ease, transform 0.2s ease; margin-top: 20px;">
-        Lägg till beställning
-    </button>
+    <!-- Beställningsknapp -->
+    <button type="button" id="submit-button" class="swish-button" style="background-color: #4CAF50; color: white; padding: 20px; font-size: 1.3em; border-radius: 12px;">Lägg till beställning</button>
 
     <!-- Statusmeddelande -->
     <p id="statusMessage" style="font-size: 1.3em; font-weight: bold; color: red;"></p>
 </form>
 
-<!-- JavaScript för att hantera omdirigering och Telegram-skickning -->
 <script>
+    document.querySelectorAll('.product-checkbox').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const oneBoldSelected = document.querySelector('input[value="One Bold Chemist 5ml"]:checked') !== null || document.querySelector('input[value="One Bold Chemist 10ml"]:checked') !== null;
+            const variantDiv = document.getElementById('one-bold-chemist-variants');
+            variantDiv.style.display = oneBoldSelected ? 'block' : 'none';
+        });
+    });
+
     document.getElementById("submit-button").addEventListener("click", function() {
-        // Hämta data från formuläret
         const namn = document.getElementById('name').value;
         const adress = document.getElementById('address').value;
         const telefon = document.getElementById('phone').value;
         const selectedProducts = document.querySelectorAll('input[type="checkbox"]:checked');
 
-        // Kontrollera att alla fält är ifyllda och att minst en produkt är vald
         if (namn && adress && telefon && selectedProducts.length > 0) {
-            // Skapa meddelandet att skicka till Telegram
             const productsArray = [];
             selectedProducts.forEach(function(checkbox) {
                 productsArray.push(checkbox.value);
             });
-            const message = `Ny beställning:\n\nNamn: ${namn}\nAdress: ${adress}\nTelefon: ${telefon}\nProdukter:\n- ${productsArray.join('\n- ')}`;
-
-            // Skicka datan till Telegram
+            const message = `Ny beställning:\nNamn: ${namn}\nAdress: ${adress}\nTelefon: ${telefon}\nProdukter:\n- ${productsArray.join('\n- ')}`;
+            
             fetch(`https://api.telegram.org/bot7506748996:AAFae-xIJDslEfN_V6N5tNYQmecZklT1vXo/sendMessage`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: '-1002150662868', // Din grupps chat-ID
-                    text: message
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: '-1002150662868', text: message })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.ok) {
-                    // Omdirigera till nästa sida om allt går bra
                     window.location.href = 'https://vfparfym.com/val-sidan.html';
                 } else {
-                    alert("Kunde inte skicka meddelandet till Telegram. Försök igen.");
+                    alert("Kunde inte skicka meddelandet till Telegram.");
                 }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Ett tekniskt fel uppstod. Försök igen.");
-            });
+            .catch(() => alert("Ett tekniskt fel uppstod."));
         } else {
-            alert("Vänligen fyll i alla fält och välj minst en produkt.");
+            alert("Fyll i alla fält och välj minst en produkt.");
         }
     });
 </script>
