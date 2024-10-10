@@ -1366,7 +1366,7 @@ Item added to your cart
   document.getElementById('mobile-swish-button').addEventListener('click', function() {
     const totalPrice = sessionStorage.getItem('totalPrice');  // Hämta totalpris från sessionStorage
     const productCount = sessionStorage.getItem('productCount');  // Hämta antal produkter från sessionStorage
-    const swishUrl = `swish://payment?data={"version":1,"payee":{"value":"0739200006"},"amount":{"value":${totalPrice}},"message":{"value":"Beställning till VF Parfym - ${productCount}st samples"}}`;
+    const swishUrl = `swish://payment?data={"version":1,"payee":{"value":"0705598333"},"amount":{"value":${totalPrice}},"message":{"value":"Beställning till VF Parfym - ${productCount}st samples"}}`;
 
     window.location.href = swishUrl;  // Omdirigera till Swish med det uppdaterade priset och meddelandet
     startTimer();  // Starta timern när man går till Swish
