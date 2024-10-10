@@ -1376,17 +1376,32 @@ Item added to your cart
         </div>
     </div>
 
-    <!-- One Bold Chemist Varianter -->
-    <label for="one-bold-chemist" style="font-size: 1.3em; color: #333;">Välj vilken One Bold Chemist du vill ha:</label>
-    <select id="one-bold-chemist" name="one-bold-chemist" style="width: 100%; padding: 10px; font-size: 1.2em; margin-bottom: 20px;">
-        <option value="God of Fire">God of Fire</option>
-        <option value="LV Imagination">LV Imagination</option>
-        <option value="Pegasus">Pegasus - Parfums de Marly</option>
-    </select>
-</div>
-</div>
-        
+    <!-- Dropdown för One Bold Chemist varianter, som visas först när den produkten är vald -->
+    <div id="one-bold-chemist-variants" style="display: none; margin-bottom: 20px;">
+        <label for="one-bold-chemist" style="font-size: 1.3em; color: #333;">Välj vilken One Bold Chemist du vill ha:</label>
+        <select id="one-bold-chemist" name="one-bold-chemist" style="width: 100%; padding: 10px; font-size: 1.2em;">
+            <option value="God of Fire">God of Fire</option>
+            <option value="LV Imagination">LV Imagination</option>
+            <option value="Pegasus">Pegasus - Parfums de Marly</option>
+        </select>
     </div>
+</div>
+
+<!-- JavaScript för att hantera visningen av variantvalet -->
+<script>
+    document.querySelectorAll('.product-checkbox').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const oneBoldSelected = document.querySelector('input[value="One Bold Chemist 5ml"]:checked') !== null || document.querySelector('input[value="One Bold Chemist 10ml"]:checked') !== null;
+            const variantDiv = document.getElementById('one-bold-chemist-variants');
+            if (oneBoldSelected) {
+                variantDiv.style.display = 'block';
+            } else {
+                variantDiv.style.display = 'none';
+            }
+        });
+    });
+</script>
+  
 
     <!-- Dynamisk totalvisning längst ned -->
     <div id="total-price" style="font-size: 1.8em; font-weight: bold; color: #4CAF50; margin-top: 20px;">Total: 0 kr</div>
