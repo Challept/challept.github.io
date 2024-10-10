@@ -1342,7 +1342,7 @@ Item added to your cart
 
   // Skapa Swish URL baserat på totalpris och antal produkter
   if (totalPrice && productCount) {
-    const swishUrl = `swish://payment?data={"version":1,"payee":{"value":"0739200006"},"amount":{"value":${totalPrice}},"message":{"value":"Beställning till VF Parfym ${productCount}st samples"}}`;
+    const swishUrl = `swish://payment?data={"version":1,"payee":{"value":"0705598333"},"amount":{"value":${totalPrice}},"message":{"value":"Beställning till VF Parfym ${productCount}st samples"}}`;
     
     // Skapa QR-kod med rätt data
     const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(swishUrl)}`;
