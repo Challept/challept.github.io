@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -86,12 +85,12 @@
         .product-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             padding: 20px;
         }
 
         .product-card {
-            flex: 1 1 calc(25% - 20px);
+            width: calc(33.33% - 20px); /* Exakt en tredjedel av raden */
             margin: 10px;
             text-align: center;
             border: 1px solid #ddd;
@@ -132,6 +131,19 @@
 
         .buy-button:hover {
             background-color: #0077cc;
+        }
+
+        /* Mobilanpassning */
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 20px); /* Två per rad på mindre skärmar */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 20px); /* En per rad på väldigt små skärmar */
+            }
         }
 
         /* Om oss sektion */
@@ -204,7 +216,7 @@
     </div>
 
     <!-- Produkter -->
-   </section>
+    <section class="product-section">
         <div class="product-card">
             <img src="https://vfparfym.com/o.90010.jpg" alt="Aqua di Gio Profondo">
             <h3>Aqua di Gio Profondo</h3>
